@@ -16,5 +16,6 @@ class ProductController extends GetxController {
     if (products != null) {
       productlist.value = products;
     }
+    
   }
 }

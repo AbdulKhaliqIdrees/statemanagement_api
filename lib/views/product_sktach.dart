@@ -6,26 +6,26 @@ class ProductSktach extends StatelessWidget {
   final ProductModel product;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow,
-      height: 300,
-      width: 100,
-      child: Column(
-        children: [
-          Text(
-            product.title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 30,
+    return Expanded(
+      child: Container(
+        color: Colors.yellow,
+        child: Column(
+          children: [
+            Text(
+              product.title,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 30,
+              ),
             ),
-          ),
-          Text(
-            product.body,
-            style: TextStyle(
-              fontSize: 20,
+            Text(
+              product.body,
+              style: TextStyle(
+                fontSize: 20,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

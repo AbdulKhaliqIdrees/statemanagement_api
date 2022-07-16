@@ -12,7 +12,7 @@ class RemoteServices {
       var jasonString = response.body;
       return welcomeFromJson(jasonString);
     } else {
-      print("Error");
+      return [];
     }
   }
 }

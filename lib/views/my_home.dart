@@ -13,36 +13,10 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.teal,
         elevation: 0,
-        leading: const Icon(
-          Icons.arrow_back_ios,
-        ),
-        actions: [
-          IconButton(
-            icon: Icon(
-              Icons.shopping_cart,
-            ),
-            onPressed: () {},
-          )
-        ],
+        title: Text("API with State Management"),
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'ShopX',
-                    style: TextStyle(fontSize: 32, fontWeight: FontWeight.w900),
-                  ),
-                ),
-                IconButton(
-                    icon: Icon(Icons.view_list_rounded), onPressed: () {}),
-                IconButton(icon: Icon(Icons.grid_view), onPressed: () {}),
-              ],
-            ),
-          ),
           Expanded(
             child: Obx(
               () => StaggeredGridView.countBuilder(
@@ -53,7 +27,7 @@ class MyHome extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return ProductSktach(productcontroller.productlist[index]);
                 },
-                staggeredTileBuilder: (index) => StaggeredTile.fit(1),
+                staggeredTileBuilder: (index) => StaggeredTile.fit(2),
               ),
             ),
           ),
