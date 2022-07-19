@@ -19,16 +19,23 @@ class MyHome extends StatelessWidget {
         children: [
           Expanded(
             child: Obx(
-              () => StaggeredGridView.countBuilder(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-                itemCount: productcontroller.productlist.length,
-                itemBuilder: (context, index) {
-                  return ProductSktach(productcontroller.productlist[index]);
-                },
-                staggeredTileBuilder: (index) => StaggeredTile.fit(2),
-              ),
+              () {
+                if (productcontroller.loading.value) {
+                  return Center(child: CircularProgressIndicator(
+                    color: Colors.red,
+                  ));
+                } else
+                  return StaggeredGridView.countBuilder(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      itemCount: productcontroller.productlist.length,
+                      itemBuilder: (context, index) {
+                        return ProductSktach(
+                            productcontroller.productlist[index]);
+                      },
+                      staggeredTileBuilder: (index) => StaggeredTile.fit(2));
+              },
             ),
           ),
         ],
